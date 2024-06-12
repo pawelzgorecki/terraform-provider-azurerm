@@ -38,7 +38,7 @@ func FrontendPortRange(i interface{}, k string) (warnings []string, errors []err
 		errors = append(errors, fmt.Errorf("expect values range between 1 and 65534 except ports from `50000` to `55000`, got %v: %v", k, i))
 		return warnings, errors
 	}
-	if endPort-startPort < 100 {
+	if endPort-startPort < 99 {
 		errors = append(errors, fmt.Errorf("values must be a range of at least 100, got %v: %v", k, i))
 		return warnings, errors
 	}
